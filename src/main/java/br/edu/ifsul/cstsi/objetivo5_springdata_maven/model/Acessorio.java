@@ -10,6 +10,6 @@ public class Acessorio {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String descricao;
-    @ManyToMany
+    @ManyToMany(mappedBy = "acessorios")
     List<Carro> carros = new ArrayList<>();
 }

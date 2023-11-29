@@ -15,10 +15,13 @@ public class Carro {
     private String cor;
     private BigDecimal valorDiaria;
 
-    @OneToMany
+    @OneToMany(mappedBy = "carro")
     List<Aluguel> alugueis = new ArrayList<>();
-    @ManyToOne
-    private ModeloCarro modeloCarro;
     @ManyToMany
+    @JoinTable(
+            name="carro_acessorios",
+            joinColumns = @JoinColumn(name = "carro_id", referencedColumnName = "id"),
+            inverseJoinColumns = @JoinColumn(name="acessorio_id", referencedColumnName = "id")
+    )
     List<Acessorio> acessorios = new ArrayList<>();
 }

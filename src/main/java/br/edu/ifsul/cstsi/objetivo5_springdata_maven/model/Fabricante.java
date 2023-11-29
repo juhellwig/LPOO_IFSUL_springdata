@@ -10,6 +10,6 @@ public class Fabricante {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String nome;
-    @OneToMany
+    @OneToMany(mappedBy = "fabricante")
     List<ModeloCarro> modelosCarros = new ArrayList<>();
 }

@@ -1,17 +1,16 @@
 package br.edu.ifsul.cstsi.objetivo5_springdata_maven.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
+import java.time.LocalDate;
 import java.util.Date;
 
 @Entity
 public abstract class Pessoa {
     private String nome;
-    private Date dataNascimento;
-    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private LocalDate dataNascimento;
+    @Id
     private String cpf;
+    @Enumerated
     private Sexo sexo;
 }

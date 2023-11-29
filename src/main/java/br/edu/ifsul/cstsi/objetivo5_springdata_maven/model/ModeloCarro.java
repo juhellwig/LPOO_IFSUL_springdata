@@ -13,7 +13,9 @@ public class ModeloCarro {
     @OneToMany
     List<Carro> carros = new ArrayList<>();
     @ManyToOne
+    @JoinColumn(name="modelocarro_fabricante", referencedColumnName = "id")
     private Fabricante fabricante;
+    @Enumerated
     private Categoria categoria;
 
 }
