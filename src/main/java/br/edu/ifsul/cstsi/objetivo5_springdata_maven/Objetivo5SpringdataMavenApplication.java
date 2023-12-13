@@ -8,6 +8,6 @@ public class Objetivo5SpringdataMavenApplication {
 
     public static void main(String[] args) {
         SpringApplication.run(Objetivo5SpringdataMavenApplication.class, args);
+        HomeController.main(null);
     }
-
 }
